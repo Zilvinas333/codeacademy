@@ -1,7 +1,11 @@
+@import 'variables.scss';
+
 html, body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    width: $hundred-perc;
+    height: $hundred-perc;
 }
 
 .clear {
@@ -9,7 +13,7 @@ html, body {
 }
 
 .nav {
-    width: 100%;
+    width: $hundred-perc;
     height: 75px;
     background-color: rgb(63,81,181);
     display: flex;
@@ -21,7 +25,6 @@ html, body {
         flex-wrap: wrap;
         /*justify-content: center;
         align-items: center;*/
-        border: 3px solid white;
     }
     &__left__menu {
         margin: 0 8px 0 8px;
@@ -52,18 +55,17 @@ html, body {
     &__right__square {
         width: 25px;
         height: 25px;
-        /*background-image: url('../src/assets/images/square.svg');*/
-        align-self: center;
-        margin-right: 30px;
+        background-image: url('../images/square.svg');
+        @extend %align-margin; /* sukuria klase css virsuje? */
     }
     &__right__multipoint {
-        color: rgb(255,255,255);
+        @include color();
         align-self: center;
         margin-right: 30px;
         font-weight: bold;
     }
     &__right__nots {
-        /*background-image: url('../images/notification.svg');*/
+        background-image: url('../images/notification.svg');
         width: 25px;
         height: 25px;
         align-self: center;
@@ -73,7 +75,7 @@ html, body {
         width: 12px;
         height: 12px;
         background-color: rgb(255,0,0);
-        color: rgb(255,255,255);
+        @include color();
         font-size: 10px;
         font-weight: bold;
         text-align: center;
@@ -82,7 +84,7 @@ html, body {
     &__right__avatar {
         width: 50px;
         height: 50px;
-        /*background-image: url('../images/avatar.jpg');*/
+        background-image: url('../images/avatar.jpg');
         border-radius: 50px;
         align-self: center;
     }
@@ -91,7 +93,7 @@ html, body {
 #logo__container {
     width: 200px;
     height: 75px;
-    color: rgb(255,255,255);
+    @include color();
     display: flex;
 }
 
@@ -133,11 +135,12 @@ html, body {
 /* sidenav */
 
 .sidenav {
-    height: 100%;
+    height: $hundred-perc;
     width: 245px;
     margin-top: 75px;
     position: fixed;
-    box-shadow: 0px -3px 4px 1px rgb(85,85,85);
+    box-shadow: 0px -3px 4px 1px rgb(125,125,125);
+    @include white-background();
     overflow-y: scroll;
     overflow-x: hidden;
     /*padding: 10px 25px;*/
@@ -187,55 +190,85 @@ html, body {
     }
 }
 
-/*.sidenav h5 {
+.container {
+    max-width: $hundred-perc;
+    height: $hundred-perc;
+    background-color: rgb(235,235,235);
+    margin-left: 245px;
+    padding-top: 75px;
     color: rgb(85,85,85);
-    font-size: 14px;
-    padding-left: 10px;
+    &__header {
+        max-width: $hundred-perc;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        & h5 {
+            font-size: 18px;
+            margin-left: 15px;
+            align-self: center;
+        }
+        &__nav {
+            text-align: right;
+            height: 17px;
+            align-self: center;
+            margin-right: 15px;
+            & a::after {
+                content: " /";
+            } 
+            & a:last-child::after {
+                content: "";
+            }
+        }
+    }
+    &__1line {
+        max-width: $hundred-perc;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding: 0 10px 0 10px;
+        &__Element {
+            width: 260px;
+            height: 72px;
+            @include white-background();
+            box-shadow: 0px 0px 4px 1px rgb(105,105,105);
+            display: flex;
+            justify-content: space-between;
+            &__img {
+                width: 50px;
+                height: 50px;
+                margin-left: 15px;
+                align-self: center;
+                border-radius: 50px;
+                display: flex;
+                & img {
+                    margin: 0 auto;
+                    
+                }  
+            }
+            &__data {
+                width: 80px;
+                height: 45px;
+                margin-right: 15px;
+                align-self: center;
+                text-align: right;
+                & span {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                & a {
+                    font-size: 12px;
+                }
+            }
+        }
+        &__BigElement {
+            width: 330px;
+            height: 180px;
+            box-shadow: 0px 0px 4px 1px rgb(125,125,125);
+            @include white-background();
+            padding: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
 }
-
-.sidenav__arrow {
-    position: absolute;
-    margin-left: 170px;
-    display: block;
-}
-
-.sidenav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 0 0;
-}
-
-
-.sidenav ul li a {
-    display: block;
-    padding: 10px 0 10px 20px;
-}
-
-.sidenav ul li a:hover {
-    background-color: rgb(240,240,240);
-    border-left: 2px solid rgb(63,81,181);
-    padding: 10px 0 10px 18px;
-}
-
-.sidenav ul li a:focus {
-    background-color: rgb(240,240,240);
-    border-left: 2px solid rgb(63,81,181);
-    padding: 10px 0 10px 18px;
-}
-
-.sidenav ul li a:focus .sidenav_arrow {
-    display: none;
-}
-
-.sidenav ul li a img {
-    float: left;
-}
-
-.sidenav ul li a span {
-    float: left;
-    align-self: center;
-    margin-top: 5px;
-    margin-left: 10px;
-    color: rgb(85,85,85);
-    font-weight: bold;
-}*/

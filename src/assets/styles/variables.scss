@@ -1,0 +1,14 @@
+$hundred-perc: 100%;
+
+%align-margin {
+    align-self: center;
+    margin-right: 30px;
+}
+
+@mixin color() {
+    color: rgb(255,255,255);
+}
+
+@mixin white-background() {
+    background-color: rgb(255,255,255);
+}
