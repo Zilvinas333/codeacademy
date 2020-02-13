@@ -19,3 +19,21 @@ import "./assets/images/search.svg";
 import "./assets/images/square.svg";
 import "./assets/images/tables.svg";
 import "./assets/images/text.svg";
+import "./index.hbs";
+import "./about.hbs";
+import "./pricing.hbs";
+import "./assets/styles/nav.scss";
+import "./assets/styles/pricing.scss";
+//import "bootstrap";
+
+console.log(document.querySelector('[data-toggle]'));
+
+document.querySelector('[data-toggle]').addEventListener('click', function(event) {
+    console.log(event.target.dataset.toggle); //galima parasyt tiesiog event ir zr console, ten ismeta ivairia informacija
+    let element = event.target.dataset.toggle;
+    document.querySelectorAll('[data-' + element + ']').forEach(function(el){ //lauztiniai skliaustai naudojami tik data- atributui
+        console.log(el); //element tai jis ima duomenis is ten kur ivyko eventas, jei paziuret pvz i nav.hbs tai ten bus
+        //data-sidenav
+        el.classList.toggle('small');
+    }); 
+});

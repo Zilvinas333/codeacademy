@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{htmlWebpackPlugin.options.title}}</title> <!-- confige zr, 40 eilute atrodo-->
+        <link rel="stylesheet" href="assets/styles/app.css">
+        
+    </head>
+    <body>
+        {{> partials/nav }}
+        {{> partials/sidenav }}
+        <div data-sidenav class="profile-wrap">
+        <div class="profile">
+            <div class="profile__info">
+                <div class="profile__info__photo">
+                    <div class="profile__info__photo__img">
+                        <img src="assets/images/photo.png" />
+                    </div>
+                </div>
+                <a>Mark McKnight</a>
+                <a>@webdesigner</a>
+                <div class="profile__info__buttons">
+                    <button>Follow</button>
+                    <button>Message</button>
+                </div>
+                <div class="profile__info__details">
+                    <span>Full Name:</span> Mark A. McKnight<br/><br/>
+                    <span>Mobile:</span> (123) 123 123<br/><br/>
+                    <span>Email:</span> coderthemes@gmail.com<br/><br/>
+                    <span>Location:</span> USA
+                </div>
+                <div class="profile__info__social">
+                    <div class="profile__info__social__icons">
+                        <img src="assets/images/facebook.svg" />
+                    </div>
+                    <div class="profile__info__social__icons">
+                        <img src="assets/images/twitter.svg" />
+                    </div>
+                    <div class="profile__info__social__icons">
+                        <img src="assets/images/skype.svg" />
+                    </div>
+                </div>
+            </div>
+            <div class="profile__skills">
+                <h2>Skills</h2>
+                <a>HTML5</a>
+                <div class="profile__skills__scale">
+                    <div class="profile__skills__scale__ind" style="width: 300px;">
+
+                    </div>
+                </div>
+                
+                <a>PHP</a>
+                <div class="profile__skills__scale">
+                     <div class="profile__skills__scale__ind" style="width: 200px;">
+
+                    </div>
+                </div>
+                <a>Wordpress</a>
+                <div class="profile__skills__scale">
+                     <div class="profile__skills__scale__ind" style="width: 250px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tablink" onclick="openPage('Home', this, 'rgb(255,255,255)', '3px solid rgb(62,70,171)')" id="defaultOpen">ABOUT ME</button>
+            <button class="tablink" onclick="openPage('News', this, 'rgb(255,255,255)', '3px solid  rgb(62,70,171)')" >GALLERY</button>
+            <button class="tablink" onclick="openPage('Contact', this, 'rgb(255,255,255)', '3px solid  rgb(62,70,171)')">SETTINGS</button>
+
+            <div id="Home" class="tabcontent">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dapibus pretium quam, et finibus nulla lobortis et. Mauris erat tortor, tincidunt nec justo sit amet, semper bibendum elit. Morbi et auctor felis. Mauris in ex elementum mauris sollicitudin rutrum in sed mauris. Suspendisse ut nisi in sem tempor rutrum at a magna. Sed blandit tempus maximus.</p>
+                <h3>Experience</h3>
+                <div class="about__block">
+                    <a>Lead Designer / Developer</a>
+                    <a>websitename.com</a>
+                    <a>2010-2015</a>
+                    <a>Cras et nulla libero. Fusce gravida sem at maximus fringilla. Integer tristique felis fermentum, gravida enim fermentum, commodo purus. Integer fermentum rutrum enim.</a>
+                </div>
+                <div class="about__block">
+                    <a>Senior Graphic Designer</a>
+                    <a> coderthemes.com</a>
+                    <a>2007-2009</a>
+                    <a>Cras et nulla libero. Fusce gravida sem at maximus fringilla. Integer tristique felis fermentum, gravida enim fermentum, commodo purus. Integer fermentum rutrum enim.</a>
+                </div>
+            </div>
+
+            <div id="News" class="tabcontent">
+                <div class="gallery">
+                    <div class="gallery__item">
+                        <img src="assets/images/mockup1.png" />
+                        <a>Gallery image</a>
+                        <div class="gallery__item__line"></div>
+                        <a>Photography</a>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="assets/images/mockup2.png" />
+                        <a>Gallery image</a>
+                        <div class="gallery__item__line"></div>
+                        <a>Photography</a>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="assets/images/mockup3.png" />
+                        <a>Gallery image</a>
+                        <div class="gallery__item__line"></div>
+                        <a>Photography</a>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="assets/images/mockup1.png" />
+                        <a>Gallery image</a>
+                        <div class="gallery__item__line"></div>
+                        <a>Photography</a>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="assets/images/mockup2.png" />
+                        <a>Gallery image</a>
+                        <div class="gallery__item__line"></div>
+                        <a>Photography</a>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="assets/images/mockup3.png" />
+                        <a>Gallery image</a>
+                        <div class="gallery__item__line"></div>
+                        <a>Photography</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Contact" class="tabcontent">
+                <div class="settings">
+                    <a class="settings__head">
+                        Full Name
+                    </a>
+                    <a class="settings__data">
+                        John Doe
+                    </a>
+                </div>
+                <div class="settings">
+                    <a class="settings__head">
+                        Email
+                    </a>
+                    <a class="settings__data">
+                        first.last@example.com
+                    </a>
+                </div>
+                <div class="settings">
+                    <a class="settings__head">
+                        Username
+                    </a>
+                    <a class="settings__data">
+                        john
+                    </a>
+                </div>
+                <div class="settings">
+                    <a class="settings__head">
+                        Password
+                    </a>
+                    <a class="settings__data">
+                        6-15 characters
+                    </a>
+                </div>
+                <div class="settings">
+                    <a class="settings__head">
+                        Re-password
+                    </a>
+                    <a class="settings__data">
+                        6-15 characters
+                    </a>
+                </div>
+                <div class="settings">
+                    <a class="settings__head">
+                        About me
+                    </a>
+                    <a class="settings__data">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nisl nec sapien ultricies rutrum malesuada eget nisi. Quisque maximus facilisis nisl at pretium.
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+<script>
+function openPage(pageName,elmnt,color,border) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+    tablinks[i].style.border = "0";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+  elmnt.style.borderBottom = border;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+        <div id="aboutme">
+            
+        </div>
+        <div>
+    </body>
+</html>

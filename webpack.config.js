@@ -1,5 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
@@ -25,10 +27,31 @@ module.exports = {
           outputPath: 'assets/images',
           publicPath: '../images'
         },
-      }
+      },
+      { test: /\.hbs$/, loader: "handlebars-loader" }
     ],
   },
   plugins: [
+    new webpack.LoaderOptionsPlugin({ /* kazkas irgi su failu uzloadinimu susije? */
+      options: {
+        handlebarsLoader: {}
+      }
+    }),
+    new HtmlWebpackPlugin({
+      title: 'index',
+      filename: 'index.html',
+      template: './src/index.hbs' /* taip kuriuosi naujus failus */
+    }),
+    new HtmlWebpackPlugin({
+      title: 'about',
+      filename: 'about.html',
+      template: './src/about.hbs' /* taip kuriuosi naujus failus */
+    }),
+    new HtmlWebpackPlugin({
+      title: 'pricing',
+      filename: 'pricing.html',
+      template: './src/pricing.hbs' /* taip kuriuosi naujus failus */
+    }),
     new MiniCssExtractPlugin({
         filename: 'assets/styles/app.css',
     }),

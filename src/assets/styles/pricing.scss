@@ -1,0 +1,142 @@
+.pricing {
+    background-color: rgb(235,235,235);
+    margin-left: 245px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    color: rgb(78,86,102);
+    &.small {
+        margin-left: 70px;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 15px;
+    }
+    & h1 {
+        text-align: center;
+    }
+    &__container {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        &__card {
+            width: 340px;
+            height: 535px;
+            background-color: rgb(255,255,255);
+            padding-top: 15px;
+            z-index: 1;
+            box-shadow: 3px 3px 4px rgb(180,180,180);
+            & h2 {
+                color: rgb(123,184,114);
+                font-weight: normal;
+                font-size: 24px;
+                text-align: center;
+            }
+            & > a:nth-child(2) {
+                font-size: 32px;
+                font-weight: bold;
+                display: block;
+                text-align: center;
+            }
+            & > a:nth-child(3) {
+                font-size: 12px;
+                display: block;
+                text-align: center;
+                color: rgb(180,180,180);
+            }
+            &__data {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+                & a {
+                    font-size: 14px;
+                }
+                & img {
+                    margin-right: 10px;
+                }
+            }
+            &__signup {
+                padding: 10px 20px;
+                background-color: rgb(223,118,118);
+                color: rgb(255,255,255);
+                text-decoration: none;
+                margin: 40px auto 0 auto;
+                display: block;
+                width: 76px;
+                font-size: 14px;
+                text-align: center;
+                border-radius: 25px;
+            }
+        }
+    }
+}
+
+.popular {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    margin: -8px 0 0 -113px;
+    z-index: 2;
+    &__line {
+        background-color: rgb(123,184,114);
+        color: rgb(255,255,255);
+        display: block;
+        width: 160px;
+        height: 25px;
+        transform: rotate(-40deg);
+        margin: 26px 0 0 -38px;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 5px;
+    }
+}
+
+.square1 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(98, 162, 88);
+    position: absolute;
+    transform: rotate(45deg);
+    margin: -5px 0 0 -66px;
+}
+
+.square2 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(98, 162, 88);
+    position: absolute;
+    transform: rotate(45deg);
+    margin: 84px 0 0 -172px;
+}
+
+@media only screen and (max-width: 1280px) { 
+    .pricing__container {
+        width: 90%;
+        display: block;
+    }
+
+    .pricing__container__card {
+        margin: 0 auto 25px auto;
+    }
+
+    .popular {
+        display: none;
+    }
+
+    .square1 {
+        display: none;
+    }
+
+    .square2 {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing {
+        margin-left: 70px;
+    }
+}
